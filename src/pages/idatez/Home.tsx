@@ -170,7 +170,7 @@ const Home = () => {
             iDatez viser dig færre, men bedre profiler. Vi prioriterer mennesker med samme
             intentioner som dig – ikke dem der swiper mest.
           </p>
-          <Button asChild className="mt-8 h-13 bg-ink px-8 py-4 font-semibold text-ink-foreground hover:bg-ink/90">
+          <Button asChild className="mt-8 h-14 bg-ink px-8 py-4 font-semibold text-ink-foreground hover:bg-ink/90">
             <Link to="/discover">Se dine forslag</Link>
           </Button>
         </Reveal>
@@ -263,7 +263,7 @@ const Home = () => {
                 <span className="text-sm text-muted-foreground">{meta}</span>
               </div>
             ))}
-            <Button asChild className="h-13 w-full bg-primary py-4 font-semibold hover:bg-primary-soft">
+            <Button asChild className="h-14 w-full bg-primary py-4 font-semibold hover:bg-primary-soft">
               <Link to="/onboarding">Start verificering</Link>
             </Button>
           </Reveal>

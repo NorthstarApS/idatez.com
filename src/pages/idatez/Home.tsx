@@ -49,7 +49,7 @@ const Home = () => {
           className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/55 to-ink/20"
           aria-hidden="true"
         />
-        <div className="container-wide relative flex min-h-[90vh] flex-col justify-end pb-14 pt-32 md:justify-center md:pb-24">
+        <div className="container-wide relative z-10 flex min-h-[90vh] flex-col justify-end pb-14 pt-32 md:justify-center md:pb-24">
           <div className="max-w-3xl">
             <motion.p
               initial={reduce ? {} : { opacity: 0, y: 20 }}

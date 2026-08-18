@@ -2,96 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
-/* iDatez design system — light, sharp, editorial. All colors MUST be HSL. */
+/* ------------------------------------------------------------------
+   PartnerHub24 design system — editorial, warm, burgundy. HSL only.
+   iDatez keeps its own token set under .brand-idatez (legacy brand).
+------------------------------------------------------------------- */
 
 @layer base {
   :root {
-    --background: 0 100% 98%;          /* #FFF8F8 */
-    --surface: 0 0% 100%;
-    --foreground: 0 0% 7%;             /* #111111 */
+    --background: 20 100% 99%;         /* #FFFDFC warm white */
+    --surface: 33 41% 95%;             /* #F7F2EC warm cream */
+    --cream: 33 41% 95%;
+    --sand: 31 33% 86%;                /* #E8DDD1 soft sand */
+    --foreground: 0 4% 9%;             /* #181616 */
 
+    --card: 20 100% 99%;
+    --card-foreground: 0 4% 9%;
+    --popover: 20 100% 99%;
+    --popover-foreground: 0 4% 9%;
+
+    --primary: 342 56% 25%;            /* #641C32 deep burgundy */
+    --primary-foreground: 33 41% 95%;
+    --primary-soft: 342 40% 36%;
+
+    --secondary: 33 41% 95%;
+    --secondary-foreground: 0 4% 9%;
+
+    --muted: 31 33% 92%;
+    --muted-foreground: 12 5% 42%;     /* #706866 */
+
+    --accent: 11 53% 53%;              /* #C65D46 terracotta */
+    --accent-foreground: 33 41% 97%;
+
+    --rose: 356 42% 75%;               /* #D9A3A7 muted rose */
+    --highlight: 11 53% 53%;
+    --premium: 342 56% 25%;
+
+    --ink: 0 7% 9%;                    /* #171414 */
+    --ink-foreground: 33 41% 95%;
+
+    --destructive: 4 62% 42%;
+    --destructive-foreground: 33 41% 97%;
+    --success: 152 34% 32%;
+    --success-foreground: 33 41% 97%;
+
+    --border: 31 24% 87%;
+    --input: 31 20% 80%;
+    --ring: 342 56% 25%;
+
+    --radius: 0.125rem;
+
+    --sidebar-background: 33 41% 95%;
+    --sidebar-foreground: 0 4% 9%;
+    --sidebar-primary: 342 56% 25%;
+    --sidebar-primary-foreground: 33 41% 95%;
+    --sidebar-accent: 31 33% 90%;
+    --sidebar-accent-foreground: 0 4% 9%;
+    --sidebar-border: 31 24% 87%;
+    --sidebar-ring: 342 56% 25%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(342 46% 33%));
+    --gradient-veil: linear-gradient(to top, hsl(0 7% 6% / 0.72), hsl(0 7% 6% / 0.06) 62%, transparent);
+    --shadow-card: 0 24px 48px -32px hsl(342 40% 18% / 0.28);
+    --shadow-lift: 0 40px 70px -40px hsl(342 40% 18% / 0.38);
+  }
+
+  .dark {
+    --background: 0 7% 9%;
+    --surface: 0 6% 13%;
+    --foreground: 33 41% 95%;
+    --card: 0 6% 13%;
+    --card-foreground: 33 41% 95%;
+    --popover: 0 6% 13%;
+    --popover-foreground: 33 41% 95%;
+    --primary: 356 42% 75%;
+    --primary-foreground: 0 7% 9%;
+    --primary-soft: 356 42% 82%;
+    --secondary: 0 6% 17%;
+    --secondary-foreground: 33 41% 95%;
+    --muted: 0 6% 17%;
+    --muted-foreground: 31 12% 68%;
+    --accent: 11 53% 58%;
+    --accent-foreground: 0 7% 9%;
+    --border: 0 6% 22%;
+    --input: 0 6% 26%;
+    --ring: 356 42% 75%;
+    --ink: 33 41% 95%;
+    --ink-foreground: 0 7% 9%;
+  }
+
+  /* Legacy brand: iDatez */
+  .brand-idatez {
+    --background: 0 100% 98%;
+    --surface: 0 0% 100%;
+    --foreground: 0 0% 7%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 7%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 7%;
-
-    --primary: 347 100% 61%;           /* #FF3B6A */
-    --primary-foreground: 0 0% 100%;
-    --primary-soft: 348 100% 71%;      /* #FF6B8A */
-
-    --secondary: 20 21% 96%;           /* #F7F3F1 warm neutral */
-    --secondary-foreground: 0 0% 7%;
-
-    --muted: 20 21% 96%;
-    --muted-foreground: 0 0% 40%;
-
-    --accent: 344 100% 95%;            /* #FFE5EC soft pink */
-    --accent-foreground: 347 100% 35%;
-
-    --highlight: 33 100% 64%;          /* #FFB347 */
-    --premium: 263 83% 58%;            /* #7C3AED */
-
-    --ink: 0 0% 8%;                    /* #151515 */
-    --ink-foreground: 0 0% 100%;
-
-    --destructive: 0 84% 55%;
-    --destructive-foreground: 0 0% 100%;
-    --success: 152 62% 40%;
-    --success-foreground: 0 0% 100%;
-
-    --border: 0 0% 89%;
-    --input: 0 0% 85%;
-    --ring: 347 100% 61%;
-
-    --radius: 0.125rem;
-
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 0 0% 7%;
-    --sidebar-primary: 347 100% 61%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 344 100% 95%;
-    --sidebar-accent-foreground: 0 0% 7%;
-    --sidebar-border: 0 0% 89%;
-    --sidebar-ring: 347 100% 61%;
-
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-soft)));
-    --gradient-veil: linear-gradient(to top, hsl(0 0% 4% / 0.85), hsl(0 0% 4% / 0.1) 55%, transparent);
-    --shadow-card: 0 18px 40px -24px hsl(0 0% 10% / 0.28);
-    --shadow-lift: 0 30px 60px -30px hsl(347 60% 30% / 0.35);
-  }
-
-  .dark {
-    --background: 0 0% 8%;
-    --surface: 0 0% 11%;
-    --foreground: 0 0% 97%;
-    --card: 0 0% 11%;
-    --card-foreground: 0 0% 97%;
-    --popover: 0 0% 11%;
-    --popover-foreground: 0 0% 97%;
     --primary: 347 100% 61%;
     --primary-foreground: 0 0% 100%;
     --primary-soft: 348 100% 71%;
-    --secondary: 0 0% 16%;
-    --secondary-foreground: 0 0% 97%;
-    --muted: 0 0% 16%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 347 40% 20%;
-    --accent-foreground: 344 100% 90%;
+    --secondary: 20 21% 96%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 20 21% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 344 100% 95%;
+    --accent-foreground: 347 100% 35%;
     --highlight: 33 100% 64%;
-    --premium: 263 83% 68%;
-    --ink: 0 0% 100%;
-    --ink-foreground: 0 0% 8%;
-    --border: 0 0% 22%;
-    --input: 0 0% 26%;
+    --premium: 263 83% 58%;
+    --ink: 0 0% 8%;
+    --ink-foreground: 0 0% 100%;
+    --border: 0 0% 89%;
+    --input: 0 0% 85%;
     --ring: 347 100% 61%;
-    --sidebar-background: 0 0% 11%;
-    --sidebar-foreground: 0 0% 97%;
-    --sidebar-primary: 347 100% 61%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 16%;
-    --sidebar-accent-foreground: 0 0% 97%;
-    --sidebar-border: 0 0% 22%;
-    --sidebar-ring: 347 100% 61%;
+    --gradient-veil: linear-gradient(to top, hsl(0 0% 4% / 0.85), hsl(0 0% 4% / 0.1) 55%, transparent);
   }
 }
 
@@ -106,10 +130,21 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Manrope', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
   }
 
   h1, h2, h3, h4 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    @apply font-normal;
+  }
+
+  .brand-idatez {
+    font-family: 'Manrope', system-ui, sans-serif;
+  }
+  .brand-idatez h1,
+  .brand-idatez h2,
+  .brand-idatez h3,
+  .brand-idatez h4 {
     font-family: 'Sora', system-ui, sans-serif;
     @apply font-bold tracking-tight;
   }
@@ -119,7 +154,7 @@
   }
 
   ::selection {
-    background: hsl(var(--primary) / 0.2);
+    background: hsl(var(--rose) / 0.45);
   }
 }
 
@@ -128,32 +163,55 @@
     @apply mx-auto w-full max-w-[1400px] px-5 md:px-8;
   }
 
-  .display-xl {
-    @apply font-display font-bold tracking-[-0.03em] leading-[0.95];
-    font-size: clamp(2.5rem, 7vw, 5.5rem);
+  .container-editorial {
+    @apply mx-auto w-full max-w-[1560px] px-5 md:px-10 xl:px-16;
   }
 
-  .display-lg {
-    @apply font-display font-bold tracking-[-0.03em] leading-[1];
-    font-size: clamp(2.25rem, 5vw, 4rem);
+  /* Editorial serif display scale */
+  .ed-hero {
+    @apply font-editorial leading-[0.95] tracking-[-0.015em];
+    font-size: clamp(2.75rem, 6.6vw, 6.5rem);
   }
 
-  .display-md {
-    @apply font-display font-bold tracking-[-0.02em] leading-[1.05];
-    font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  .ed-xl {
+    @apply font-editorial leading-[1] tracking-[-0.01em];
+    font-size: clamp(2.25rem, 4.4vw, 4.25rem);
   }
 
-  .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground;
+  .ed-lg {
+    @apply font-editorial leading-[1.05];
+    font-size: clamp(1.75rem, 2.8vw, 2.9rem);
+  }
+
+  .ed-md {
+    @apply font-editorial leading-[1.1];
+    font-size: clamp(1.4rem, 1.9vw, 1.9rem);
+  }
+
+  .kicker {
+    @apply font-sans text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-muted-foreground;
+  }
+
+  .lede {
+    @apply font-sans text-base leading-relaxed text-muted-foreground md:text-lg;
   }
 
   .veil {
     background: var(--gradient-veil);
   }
 
+  .panel {
+    @apply border border-border bg-background;
+    box-shadow: var(--shadow-card);
+  }
+
   .card-sharp {
     @apply border border-border bg-card;
     box-shadow: var(--shadow-card);
+  }
+
+  .rule {
+    @apply h-px w-full bg-border;
   }
 
   .tap-target {

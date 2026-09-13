@@ -11,12 +11,23 @@ const COLUMNS = [
     ],
   },
   {
+    title: "Udforsk",
+    links: [
+      { label: "Dating", to: "/dating" },
+      { label: "Datingapp", to: "/datingapp" },
+      { label: "Singler", to: "/singler" },
+      { label: "Gratis dating app", to: "/gratis-dating-app" },
+      { label: "Datingprofil", to: "/datingprofil" },
+      { label: "Dating i virkeligheden", to: "/dating-i-virkeligheden" },
+    ],
+  },
+  {
     title: "Hjælp",
     links: [
       { label: "Kontakt", to: "/safety" },
-      { label: "FAQ", to: "/safety" },
+      { label: "FAQ", to: "/dating" },
       { label: "Sikkerhed", to: "/safety" },
-      { label: "Datingtips", to: "/about" },
+      { label: "Datingtips", to: "/datingprofil" },
     ],
   },
   {
@@ -38,7 +49,7 @@ const COLUMNS = [
 
 const Footer = () => (
   <footer className="border-t border-border bg-surface">
-    <div className="container-wide grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-5">
+    <div className="container-wide grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
       <div className="lg:col-span-1">
         <Logo />
         <p className="mt-4 max-w-xs text-sm text-muted-foreground">
@@ -65,7 +76,7 @@ const Footer = () => (
     </div>
     <div className="border-t border-border">
       <div className="container-wide flex flex-col gap-2 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-        <p>© {new Date().getFullYear()} iDatez</p>
+        <p>© {new Date().getFullYear()} iDatez · Viniko · CVR 44072122</p>
         <p>Lavet i København</p>
       </div>
     </div>

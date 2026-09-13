@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Logo from "./Logo";
 
 const NAV = [
+  { label: "Dating", to: "/dating" },
   { label: "Opdag", to: "/discover" },
   { label: "Matches", to: "/matches" },
   { label: "Beskeder", to: "/messages" },
